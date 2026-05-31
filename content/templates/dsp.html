@@ -1,0 +1,323 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Designing a simple voice filter using Python</title>
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <!-- CSS only -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <!-- JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="{% static "fonts/guardian-headline/latin1-not-hinted/fonts.css" %}">
+  <link rel="stylesheet" href="{% static "fonts/guardian-textegyptian/latin1-not-hinted/fonts.css" %}">
+  <link rel="stylesheet" href="{% static "fonts/guardian-textsans/latin1-not-hinted/fonts.css" %}">
+
+  <link href="{% static "css/prism.css" %}" rel="stylesheet"/>
+  <style>
+  @media (max-width:1000px){
+    .hid{
+      display:none;
+    }
+    .tit{
+      font-size:14px;
+    }
+    .aut{
+      height:auto !important;
+    }
+    .autot{
+      font-size:25px !important;
+    }
+    .ayi{
+      font-size:1rem !important;
+    }
+    .wua{
+      font-size:0.70rem !important;
+    }
+    .alibaba{
+
+      height:40px !important;
+    }
+    .mate{
+      display:none;
+    }
+    .dat{
+     position:static !important;
+    }
+  }
+
+  </style>
+<style>
+    .hola{
+        color:#8854d0;
+    }
+</style>
+
+
+</head>
+
+<body>
+  <script src="{% static "css/prism.js" %}"></script>
+  <div style="background-color:#fff;width:100%;height:65px;border-bottom:3px solid #ddd;position:fixed;z-index:2;">
+    <div class="container" style="font-family:GH Guardian Headline,Guardian Egyptian Web,Georgia,serif;font-size:1.25rem;line-height:1.15;font-weight:300;display:flex;position:absolute;top:50%;-ms-transform:translateY(-50%);transform:translateY(-50%);">
+      
+      <div>
+        <a class="navbar-brand" href="{% url "index" %}" style="color:#8854d0;font-weight:600;" >
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-diamond" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.482 1.482 0 0 1 0-2.098L6.95.435zm1.4.7a.495.495 0 0 0-.7 0L1.134 7.65a.495.495 0 0 0 0 .7l6.516 6.516a.495.495 0 0 0 .7 0l6.516-6.516a.495.495 0 0 0 0-.7L8.35 1.134z"/>
+          <path fill-rule="evenodd" d="M8.361 1.17a.51.51 0 0 0-.722 0L4.766 4.044 8 7.278l3.234-3.234L8.361 1.17zm3.595 3.596L8.722 8l3.234 3.234 2.873-2.873c.2-.2.2-.523 0-.722l-2.873-2.873zm-.722 7.19L8 8.722l-3.234 3.234 2.873 2.873c.2.2.523.2.722 0l2.873-2.873zm-7.19-.722L7.278 8 4.044 4.766 1.17 7.639a.511.511 0 0 0 0 .722l2.874 2.873zM6.917.45a1.531 1.531 0 0 1 2.166 0l6.469 6.468a1.532 1.532 0 0 1 0 2.166l-6.47 6.469a1.532 1.532 0 0 1-2.165 0L.45 9.082a1.531 1.531 0 0 1 0-2.165L6.917.45z"/>
+        </svg>
+        Kadel
+      </a>
+      </div>
+
+    <div class="tit">Designing a simple voice filter using Python.
+    </div>
+
+
+    </div>
+
+  </div>
+  <img  style="height:300px !important;width:100vw;filter:blur(1px);" src="{% static "images/signal-processing.png" %}" class="alibaba">
+  <div class="container col-lg-8" >
+    <div class="row">
+      <div class="col-lg-2 mh-100" style="border-left:1px solid #dcdcdc;" class="aut">
+        <div style="border-top:1px solid #dcdcdc;height:150px;position:sticky;top:65px;" class="aut dat">
+          <h5 style="font-family:GH Guardian Headline,Guardian Egyptian Web,Georgia,serif;font-weight:700;color:#8854d0;padding-top:5px;">Wiki</h5>
+        </div>
+        <div style="border-top:1px solid #dcdcdc;position:sticky;top:215px" class="dat">
+          <h5 style="font-family:GH Guardian Headline,Guardian Egyptian Web,Georgia,serif;line-height:1.15;font-weight:500;color:#8854d0;font-style:italic;" class="ayi">Signal Processing</h5>
+          <p style="font-family:GuardianTextSans,Guardian Text Sans Web,Helvetica Neue;line-height:1.5;font-weight:400;color:#767676;font-size:0.75rem;">Tue 3 Nov 2020 05:56 PET</p>
+        </div>
+        
+        <div style="border-top:1px solid #dcdcdc;fill:#8854d0;position:sticky;top:290px" class="dat">
+          <svg width="32" height="32" viewBox="-2 -2 32 32"><path d="M17.9 14h-3v8H12v-8h-2v-2.9h2V8.7C12 6.8 13.1 5 16 5c1.2 0 2 .1 2 .1v3h-1.8c-1 0-1.2.5-1.2 1.3v1.8h3l-.1 2.8z"></path></svg>
+          <svg width="32" height="32" viewBox="-2 -2 32 32"><path d="M21.3 10.5v.5c0 4.7-3.5 10.1-9.9 10.1-2 0-3.8-.6-5.3-1.6.3 0 .6.1.8.1 1.6 0 3.1-.6 4.3-1.5-1.5 0-2.8-1-3.3-2.4.2 0 .4.1.7.1l.9-.1c-1.6-.3-2.8-1.8-2.8-3.5.5.3 1 .4 1.6.4-.9-.6-1.6-1.7-1.6-2.9 0-.6.2-1.3.5-1.8 1.7 2.1 4.3 3.6 7.2 3.7-.1-.3-.1-.5-.1-.8 0-2 1.6-3.5 3.5-3.5 1 0 1.9.4 2.5 1.1.8-.1 1.5-.4 2.2-.8-.3.8-.8 1.5-1.5 1.9.7-.1 1.4-.3 2-.5-.4.4-1 1-1.7 1.5z"></path></svg>
+          <svg width="32" height="32" viewBox="0 0 32 32"><path d="M23.363 20.875H8.637v-8.938l6.545 5.687h1.637l6.544-5.687v8.938zm-1.635-9.75L16 16l-5.728-4.875h11.456zM23.363 9.5H8.637L7 11.125v9.75L8.637 22.5h14.727L25 20.875v-9.75L23.363 9.5z"></path></svg>
+
+        </div>
+        <div class="mate" style="position:sticky;top:330px;border-top:1px solid #dcdcdc;">
+            <ul style="font-family:GH Guardian Headline,Guardian Egyptian Web,Georgia,serif;font-weight:600;padding-left:10px;padding-top:10px;color:#82589f;">
+                <li>Getting the voice signal</li>
+                <li>Designing the digital filter</li>
+                <li>Convoluting</li>
+                <li>Espectral inversion</li>
+                <li>Plotting the original voice signal</li>
+                <li>Aplying the filter to the signal</li>
+                <li>Plotting the filtered voice signal</li>
+                <li>Finals results</li>
+            </ul>
+            </ul>
+            </ul>
+        </div>
+      </div>
+
+
+      <div class="col-lg-6" style="border:1px solid #dcdcdc;">
+        <div><h2 style="font-family:GH Guardian Headline;font-size:2.125rem;line-height:1.15;font-weight:700;color:#82589F;padding-top:7px;" class="autot">Designing a simple voice filter using Python</h2>
+        </div>
+        <div><p style="font-family:GH Guardian Headline,Guardian Egyptian Web,Georgia,serif;font-size:1.25rem;line-height:1.15;font-weight:300;" class="ayi">A simple code written in Python, without using filter libraries.</p>
+        </div>
+
+        <div style="font-family:GuardianTextEgyptian, Guardian Text Egyptian Web;line-height:1.5;font-weight:400;">
+        <p><span style="font-family:GH Guardian Headline,Guardian Egyptian Web;font-size:109px;line-height:90px;font-weight:700;color:#82589F;float:left;">T
+        </span>
+        <p>his posts explains how to design a voice filter, specifying a cutoff frecuency, and the sample rate, getting the audio signal, and designing the filter using the well-known Blackman window, then make and spectral inversion of the filter to obtain the desired filter (high-pass filter), and finally plotting the original and filtered voice signal.</p>
+        <h3 class="hola">Getting the audio.</h3>
+        <p>I used the sounddevice as library because it has a few convenience functions to play and record arrays containing audio signals. And of course is available for Linux, macOS and Windows.</p>
+        <p>You can find the documentation <a href="https://python-sounddevice.readthedocs.io/">here!</a></p>
+        <pre class="rd language-haskell" style="border-radius:10px;background-color:#07080f;">
+        <code class="language-python">
+#First it's necessary to specify the samplerate and the duration
+fs=20000
+seconds=5
+
+#Start the recording
+myrecording = sd.rec(int(seconds*fs),samplerate=fs,channels=1)
+
+#Wait to finish the recording
+sd.wait()
+
+#Writting the output in the current directory
+write('input.wav',fs,myrecording)
+
+#Reading the ouput from the path where the file was stored
+samplerate,data=wavfile.read('/path/to/the/file')
+length=data.shape[0]/samplerate
+</code>
+        </pre>
+        <h3 class="hola">Designing the digital filter</h3>
+        <p>We must specify the cut frecuency, to work with, also the transition bandwidth, as say before we are using Blackman window, that is a window function, that is zero-valued outside of some chosen interval, choosing as N=51, then to create an array of N elements, ,we need to create the window and sine cardinal function.</p>
+        <pre class="language-python" style="border-radius:10px;background-color:#07080f;">
+        <code>
+#specifying the cut frecuency
+cutFrec=250
+
+#formatting the cut frecuency according with the sample rate
+fc = cutFrec/fs
+
+#transition band
+b = 0.08
+
+#N must be odd
+N = int(np.ceil((4/b))
+
+#changing the value if N is even
+if not N % 2: N += 1
+n = np.arange(N)
+
+#creating the cardinal sine
+h = np.sinc(2*fc*(N - 1) / 2))
+
+#creating the Blackman windows
+w = 0.42 - 0.5 * np.cos(2 * np.pi * n / (N - 1)) + 0.08 * np.cos(4 * np.pi * n / (N - 1))
+</code>
+        </pre>
+        <h3 class="hola">Convoluting</h3>
+        <p>The filter is simply the convolution of the two preceding expressions, "h" and "w", multiplying sinc filter by blackman window, and then normalizing to get 1 as unity gain.</p>
+        <pre class="language-python" style="border-radius:10px;background-color:#07080f;">
+        <code>
+#convoluting the sinc filter and blackman window
+h = h * w
+
+#normalizing
+h = h / np.sum(h)
+</code>
+        </pre>
+        <h3 class="hola">Espectral inversion</h3>
+        <p>The procedure to create the desired filter, is to invert the signal, using spectral inversion to convert it into a high-pass filter, starting from the cutoff frecuency and the transition bandwidth, and the procedure to do this, is changing the sign of each value of the filter, then adding one the the value in the center.</p>
+        <pre class="language-python" style="border-radius:10px;background-color:#07080f;">
+        <code>
+#inverting
+h = -h
+
+#adding one to the value in the center
+h[(N-1)//2] +=1
+</code>
+        </pre>
+        <h3 class="hola">Plotting the original voice signal</h3>
+        <p>Using Matplotlib to plot the signal, helping us to creating static, animated and interactive visualization in Python</p>
+        <p>You can find the documentation <a href="https://matplotlib.org/users/index.html">here</a></p>
+        <pre class="language-python" style="border-radius:10px;background-color:#07080f;">
+        <code>
+#creating an array
+t = np.linspace(0.,length,data.shape[0])
+
+#creating subplots ax1 and ax2
+fig,(ax1,ax2) = plt.subplots(2,1,sharex=True)
+
+#plotting time vs signal
+ax1.plot(t,signal,"g")
+
+#setting a title
+ax1.set_title('Original Voice Signal')
+
+#background color
+ax1.patch.set_facecolor('black')
+
+#grid
+ax1.grid(color="g")
+</code>
+        </pre>
+        <h3 class="hola">Aplying the filter to the signal</h3>
+        <p>Now its necessary to convolve the filter with the original voice signal, optionally we can write the output in the current directory</p>
+        <pre class="language-python" style="border-radius:10px;background-color:#07080f;">
+        <code>
+#convolving
+signalFiltered=np.convolve(data,h,'same')
+
+#writing the output
+write('filteredOutput.wav',fs,signalFiltered)
+</code>
+        </pre>
+        <h3 class="hola">Plotting the filtered voice signal</h3>
+        <p>Now, we have to plot the filtered signal vs time, setting the title, background color and the grid</p>
+        <pre class="language-python" style="border-radius:10px;background-color:#07080f;">
+        <code>
+#plot time vs filtered signal
+ax2.plot(t,sig)
+
+#setting title
+ax2.set_title('Filtered Voice Signal')
+
+#setting background
+ax2.patch.set_facecolor('black')
+
+#setting grid
+ax2.grid(color="g")
+
+#show the plot
+plt.show()
+</code>
+        </pre>
+<h3 class="hola">Final results</h3>
+<p>As we can see, the filter is working as expected, filtering all signal below 250Hz</p>
+<img src="{% static "images/signaling.png" %}" width=100%>
+      </div>
+      </div>
+
+      <div class="col-lg-4  mh-100 hid" style="border-right:1px solid #dcdcdc;height:500px;margin-top:24px;margin-bottom:24px;position:sticky;top:70px;">
+        <h3 style="font-family:GH Guardian Headline;font-size:1.06rem;line-height:1.15;font-weight:700;">Other Posts</h3>
+
+        <div style="display:flex;border-top:1px solid #dcdcdc;margin-bottom:12px;">
+          <div  style="border-radius:100%;">
+            <img style="border-radius:100%;width:70px !important;height:70px !important;margin-right:10px;" src="https://i.guim.co.uk/img/media/a95003e1189f4f4727ff31fc06ebec329a8d5be4/0_0_6150_3691/master/6150.jpg?width=300&quality=85&auto=format&fit=max&s=1e4cba80852f3d3be5b571293eb13d08" width=100% height=100>
+          </div>
+          <div style="position:relative;">
+            <a style="color:rgb(18,18,18);font-family:GH Guardian Headline;font-size:1.0625rem;line-height:1.15;font-weight:500;">Shock and sorrow as Canada's biggest co-op sold to US private equity firm</a>
+          </div>
+        </div>
+
+<div style="display:flex;border-top:1px solid #dcdcdc;margin-bottom:12px;">
+          <div  style="border-radius:100%;">
+            <img style="border-radius:100%;width:70px !important;height:70px !important;margin-right:10px;" src="https://i.guim.co.uk/img/media/a95003e1189f4f4727ff31fc06ebec329a8d5be4/0_0_6150_3691/master/6150.jpg?width=300&quality=85&auto=format&fit=max&s=1e4cba80852f3d3be5b571293eb13d08" width=100% height=100>
+          </div>
+          <div style="position:relative;">
+            <a style="color:rgb(18,18,18);font-family:GH Guardian Headline;font-size:1.0625rem;line-height:1.15;font-weight:500;">Shock and sorrow as Canada's biggest co-op sold to US private equity firm</a>
+          </div>
+        </div>
+
+
+        <div style="display:flex;border-top:1px solid #dcdcdc;margin-bottom:12px;">
+          <div  style="border-radius:100%;">
+            <img style="border-radius:100%;width:70px !important;height:70px !important;margin-right:10px;" src="https://i.guim.co.uk/img/media/a95003e1189f4f4727ff31fc06ebec329a8d5be4/0_0_6150_3691/master/6150.jpg?width=300&quality=85&auto=format&fit=max&s=1e4cba80852f3d3be5b571293eb13d08" width=100% height=100>
+          </div>
+          <div style="position:relative;">
+            <a style="color:rgb(18,18,18);font-family:GH Guardian Headline;font-size:1.0625rem;line-height:1.15;font-weight:500;">Shock and sorrow as Canada's biggest co-op sold to US private equity firm</a>
+          </div>
+        </div>
+
+
+        <div style="display:flex;border-top:1px solid #dcdcdc;margin-bottom:12px;">
+          <div  style="border-radius:100%;">
+            <img style="border-radius:100%;width:70px !important;height:70px !important;margin-right:10px;" src="https://i.guim.co.uk/img/media/a95003e1189f4f4727ff31fc06ebec329a8d5be4/0_0_6150_3691/master/6150.jpg?width=300&quality=85&auto=format&fit=max&s=1e4cba80852f3d3be5b571293eb13d08" width=100% height=100>
+          </div>
+          <div style="position:relative;">
+            <a style="color:rgb(18,18,18);font-family:GH Guardian Headline;font-size:1.0625rem;line-height:1.15;font-weight:500;">Shock and sorrow as Canada's biggest co-op sold to US private equity firm</a>
+          </div>
+        </div>
+
+
+        <div style="display:flex;border-top:1px solid #dcdcdc;margin-bottom:12px;">
+          <div  style="border-radius:100%;">
+            <img style="border-radius:100%;width:70px !important;height:70px !important;margin-right:10px;" src="https://i.guim.co.uk/img/media/a95003e1189f4f4727ff31fc06ebec329a8d5be4/0_0_6150_3691/master/6150.jpg?width=300&quality=85&auto=format&fit=max&s=1e4cba80852f3d3be5b571293eb13d08" width=100% height=100>
+          </div>
+          <div style="position:relative;">
+            <a style="color:rgb(18,18,18);font-family:GH Guardian Headline;font-size:1.0625rem;line-height:1.15;font-weight:500;">Shock and sorrow as Canada's biggest co-op sold to US private equity firm</a>
+          </div>
+        </div>
+
+
+      </div>
+
+  </div>
+  </div>
+</body>

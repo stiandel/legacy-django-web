@@ -1,0 +1,251 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>To Be Read of the Month</title>
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <link href="{% static "css/fonts.css" %}" rel="stylesheet">
+  <link href="{% static "css/callout.css" %}" rel="stylesheet">
+  <link href="{% static "css/rainbow.css" %}" rel="stylesheet" type="text/css">
+  <!-- CSS only -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <!-- JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <style>
+        .headi {color:#5a5a5a;
+        font-family:"Playfair Display", Georgia, "Times New Roman",serif;
+        font-size:23px;
+        }
+        .fontt {color:#5a5a5a;}
+        @media(min-width:40em)
+        .fontt {
+          font-size:15px;
+
+        }
+        .hfontt {
+          font-size:20px;
+        }
+        
+  </style>
+</head>
+
+<body>
+  <img src="{% static "images/snow.png" %}" style="position:fixed;">
+  <!-- Image and text -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container col-lg-10 col-md-11 col-sm-12">
+        <a class="navbar-brand" href="{% url "index" %}" >
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-diamond" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.482 1.482 0 0 1 0-2.098L6.95.435zm1.4.7a.495.495 0 0 0-.7 0L1.134 7.65a.495.495 0 0 0 0 .7l6.516 6.516a.495.495 0 0 0 .7 0l6.516-6.516a.495.495 0 0 0 0-.7L8.35 1.134z"/>
+          <path fill-rule="evenodd" d="M8.361 1.17a.51.51 0 0 0-.722 0L4.766 4.044 8 7.278l3.234-3.234L8.361 1.17zm3.595 3.596L8.722 8l3.234 3.234 2.873-2.873c.2-.2.2-.523 0-.722l-2.873-2.873zm-.722 7.19L8 8.722l-3.234 3.234 2.873 2.873c.2.2.523.2.722 0l2.873-2.873zm-7.19-.722L7.278 8 4.044 4.766 1.17 7.639a.511.511 0 0 0 0 .722l2.874 2.873zM6.917.45a1.531 1.531 0 0 1 2.166 0l6.469 6.468a1.532 1.532 0 0 1 0 2.166l-6.47 6.469a1.532 1.532 0 0 1-2.165 0L.45 9.082a1.531 1.531 0 0 1 0-2.165L6.917.45z"/>
+        </svg>
+        Kadel
+      </a>
+
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/lists/posts">Posts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/lists/review">Reviews</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/lists/files">Files</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/lists/linux">Linux</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/lists/wiki">Wiki</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/lists/tbr">To Be Read</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/lists/aboutMe">About Me</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="" >
+      <div data-no-lazy="1" class="row justify-content-md-center featuresection" id="featuredone" style="background-image:url({{img}});opacity:.98;width:100vw;height:238px;margin:0;">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-10 align-self-center" style="opacity:100%;filter:blur(0px) !important;">
+              <h1 style="color:#FFFFFF;margin-top:60px;" class="herotitle text-md-left">{{title}}</h1>
+            <p></p>
+            <p style="color:#FFFFFF;" class="herotext text-md-left">{{ content }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<div class="container col-lg-8 col-md-9 col-sm-12">
+  <h3 class="pt-4 featurette-heading fontt">Networking & Cloud</h3>
+  <div class="row pt-4">
+
+
+        <div class="col-lg-6 col-md-6">
+          <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow h-md-250 position-relative" style="background-color:white;">
+            <div class="col-7 p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-success">Technical</strong>
+              <h3 class="mb-0 headi">Hardening Linux</h3>
+              <div class="mb-1 text-muted">James Turnbull</div>
+              <p class="mb-auto">This book identifies many of the risks of running Linux hosts and applications and provices practical examples and methods to minimize those risks.</p>
+              <a href="https://www.amazon.com/Hardening-Linux-James-Turnbull/dp/1590594444/ref=sr_1_2?dchild=1&keywords=hardening+linux&s=books&sr=1-2" class="stretched-link">Continue reading</a>
+            </div>
+            <div class="col-5 d-lg-block">
+              <img src="https://images-na.ssl-images-amazon.com/images/I/41x2MpSzkqL._SX404_BO1,204,203,200_.jpg" width="100%" height="320">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow h-md-250 position-relative" style="background-color:white;">
+            <div class="col-7 p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-success">Design</strong>
+              <h3 class="mb-0 headi">Linux Hardening in Hostile Networks</h3>
+              <div class="mb-1 text-muted">Kyle Rankin</div>
+              <p class="mb-auto">This book helps you to implements modern safeguards that provice maximun impact with minimun effort.</p>
+              <a href="https://www.amazon.com/Linux-Hardening-Hostile-Networks-Development/dp/0134173260/ref=sr_1_1?dchild=1&keywords=hardening+linux&s=books&sr=1-1" class="stretched-link">Continue reading</a>
+            </div>
+            <div class="col-5 d-lg-block">
+              <img src="https://images-na.ssl-images-amazon.com/images/I/41TcQovewTL._SX379_BO1,204,203,200_.jpg" width="100%" height="320">
+            </div>
+          </div>
+        </div>
+
+                <div class="col-lg-6 col-md-6">
+          <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow h-md-250 position-relative" style="background-color:white;">
+            <div class="col-7 p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-success">Design</strong>
+              <h3 class="mb-0 headi">How Linux Works</h3>
+              <div class="mb-1 text-muted">Brian Ward</div>
+              <p class="mb-auto">Teach you its internals, like how the system boots, how networking works and what the kernel actually does.</p>
+              <a href="https://www.amazon.com/How-Linux-Works-2nd-Superuser/dp/1593275676/ref=sr_1_1?dchild=1&keywords=how+linux+works&s=books&sr=1-1" class="stretched-link">Continue reading</a>
+            </div>
+            <div class="col-5 d-lg-block">
+              <img src="https://images-na.ssl-images-amazon.com/images/I/51LAvDkpwmL._SX375_BO1,204,203,200_.jpg" width="100%" height="320">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow h-md-250 position-relative" style="background-color:white;">
+            <div class="col-7 p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-success">Design</strong>
+              <h3 class="mb-0 headi">The Linux Programming Interface</h3>
+              <div class="mb-1 text-muted">Michael Kerrisk</div>
+              <p class="mb-auto">Is the definitive guide to the Linux and UNIX programming interface.</p>
+              <a href="https://www.amazon.com/Linux-Programming-Interface-System-Handbook/dp/1593272200/ref=sr_1_1?crid=1OR2FMK16OFXI&dchild=1&keywords=the+linux+programming+interface&s=books&sprefix=the+linux+programm%2Cstripbooks-intl-ship%2C393&sr=1-1" class="stretched-link">Continue reading</a>
+            </div>
+            <div class="col-5 d-lg-block">
+              <img src="https://images-na.ssl-images-amazon.com/images/I/515ZB90pn6L._SX376_BO1,204,203,200_.jpg" width="100%" height="320">
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+ <hr class="featurette-divider">
+  <h3 class="pt-4 fontt">Popular Books</h3>
+  <div class="row pt-4">
+
+
+        <div class="col-lg-6 col-md-6">
+          <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow h-md-250 position-relative" style="background-color:white;">
+            <div class="col-7 p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-success">Technical</strong>
+              <h3 class="mb-0 headi">All the Devils Are Here</h3>
+              <div class="mb-1 text-muted">Louise Penny</div>
+              <p class="mb-auto">One of fall's most anticipated books.</p>
+              <a href="https://www.amazon.com/All-Devils-Are-Here-Inspector-ebook/dp/B0841FHN4C/ref=sr_1_1?dchild=1&keywords=all+the+devils+are+here&s=books&sr=1-1" class="stretched-link">Continue reading</a>
+            </div>
+            <div class="col-5 d-lg-block">
+              <img src="https://images-na.ssl-images-amazon.com/images/I/51mOX-KGWlL._SX328_BO1,204,203,200_.jpg" width="100%" height="320">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow h-md-250 position-relative" style="background-color:white;">
+            <div class="col-7 p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-success">Design</strong>
+              <h3 class="mb-0 headi">Rage</h3>
+              <div class="mb-1 text-muted">Bob Woodward</div>
+              <p class="mb-auto">An unprecedent and intimate tour de force of new reporting on the Trump presidency.</p>
+              <a href="https://www.amazon.com/Rage/dp/B0898S6V6T/ref=sr_1_1?crid=8FG9S1V30075&dchild=1&keywords=rage+bob+woodward&s=books&sprefix=rage%2Cstripbooks-intl-ship%2C291&sr=1-1" class="stretched-link">Continue reading</a>
+            </div>
+            <div class="col-5 d-lg-block">
+              <img src="https://images-na.ssl-images-amazon.com/images/I/41r4MsfTSxL._SX329_BO1,204,203,200_.jpg" width="100%" height="320">
+            </div>
+          </div>
+        </div>
+
+                <div class="col-lg-6 col-md-6">
+          <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow h-md-250 position-relative" style="background-color:white;">
+            <div class="col-7 p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-success">Design</strong>
+              <h3 class="mb-0 headi">Dune</h3>
+              <div class="mb-1 text-muted">Frank Herbert</div>
+              <p class="mb-auto">A classic science fiction book.</p>
+              <a href="https://www.amazon.com/Dune-Chronicles-Frank-Herbert-1996-06-01/dp/B01JNWFH8U/ref=sr_1_3?dchild=1&keywords=dune&s=books&sr=1-3" class="stretched-link">Continue reading</a>
+            </div>
+            <div class="col-5 d-lg-block">
+              <img src="https://images-na.ssl-images-amazon.com/images/I/41UZeCEKOBL._SX331_BO1,204,203,200_.jpg" width="100%" height="320">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow h-md-250 position-relative" style="background-color:white;">
+            <div class="col-7 p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-success">Design</strong>
+              <h3 class="mb-0 headi">The Testaments</h3>
+              <div class="mb-1 text-muted">Margaret Atwood</div>
+              <p class="mb-auto">A sequel to Margaret Atwood's classic, The Handmaid's Tale.</p>
+              <a href="https://www.amazon.com/Testaments-Novel-Margaret-Atwood-ebook/dp/B07KVLPYDQ/ref=sr_1_1?crid=22SJJKKERTT45&dchild=1&keywords=the+testaments+by+margaret+atwood&s=books&sprefix=the+testament%2Cstripbooks-intl-ship%2C303&sr=1-1" class="stretched-link">Continue reading</a>
+            </div>
+            <div class="col-5 d-lg-block">
+              <img src="https://images-na.ssl-images-amazon.com/images/I/41tQlCX2HbL._SX327_BO1,204,203,200_.jpg" width="100%" height="320">
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+</body>
+
+</html>

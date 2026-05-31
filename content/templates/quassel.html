@@ -1,0 +1,228 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Setting up Quassel Core for distributed IRC client</title>
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="{% static "css/callout.css" %}" rel="stylesheet">
+  <link href="{% static "css/rainbow.css" %}" rel="stylesheet" type="text/css">
+  <!-- CSS only -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <!-- JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static "fonts/guardian-headline/latin1-not-hinted/fonts.css" %}">
+  <link rel="stylesheet" href="{% static "fonts/guardian-textegyptian/latin1-not-hinted/fonts.css" %}">
+  <link rel="stylesheet" href="{% static "fonts/guardian-textsans/latin1-not-hinted/fonts.css" %}">
+  <style>
+  @media (max-width:1000px){
+    .hid{
+      padding-top:0 !important;
+      position:fixed !important;
+      z-index: -3 !important;
+    }
+    .tit{
+      font-size:14px;
+    }
+    .alibaba {
+      width:100%;
+      filter:blur(1px) !important;
+      height:200px !important;
+
+    }
+  }
+  </style>
+<style>
+    p{
+      font-family:GuardianTextEgyptian, Guardian Text Egyptian Web;
+      line-height:1.5;
+      font-weight:400;
+    }
+    .sid{
+        color:#c70000 !important;
+        padding-top:40px;
+        font-weight:bold;
+    }
+    .pika{
+        color:white;
+        border-radius:6px;}
+    h1{
+        color:#8f0404;}
+    h4{
+        color:#8f0404;}
+</style>
+<style>
+  @media(max-width:1000px){
+    .rat{
+      font-size:25px;
+    }
+    .autot{
+      font-size:25px !important;
+    }
+    .imgg{
+        width:100%;
+    }
+  }
+  </style>
+</head>
+
+<body>
+  <img src="{% static "images/snow.png" %}" style="position:fixed;">
+  <script src="{% static "css/rainbow-custom.min.js" %}"></script>
+  <!-- Image and text -->
+
+
+  <div style="background-color:#fff;width:100%;height:65px;border-bottom:3px solid #ddd;position:fixed;z-index:2;">
+    <div class="container" style="font-family:GH Guardian Headline,Guardian Egyptian Web,Georgia,serif;font-size:1.25rem;line-height:1.15;font-weight:300;display:flex;position:absolute;top:50%;-ms-transform:translateY(-50%);transform:translateY(-50%);">
+      
+      <div>
+        <a class="navbar-brand" href="{% url "index" %}" style="color:#c70000;font-weight:600;" >
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-diamond" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.482 1.482 0 0 1 0-2.098L6.95.435zm1.4.7a.495.495 0 0 0-.7 0L1.134 7.65a.495.495 0 0 0 0 .7l6.516 6.516a.495.495 0 0 0 .7 0l6.516-6.516a.495.495 0 0 0 0-.7L8.35 1.134z"/>
+          <path fill-rule="evenodd" d="M8.361 1.17a.51.51 0 0 0-.722 0L4.766 4.044 8 7.278l3.234-3.234L8.361 1.17zm3.595 3.596L8.722 8l3.234 3.234 2.873-2.873c.2-.2.2-.523 0-.722l-2.873-2.873zm-.722 7.19L8 8.722l-3.234 3.234 2.873 2.873c.2.2.523.2.722 0l2.873-2.873zm-7.19-.722L7.278 8 4.044 4.766 1.17 7.639a.511.511 0 0 0 0 .722l2.874 2.873zM6.917.45a1.531 1.531 0 0 1 2.166 0l6.469 6.468a1.532 1.532 0 0 1 0 2.166l-6.47 6.469a1.532 1.532 0 0 1-2.165 0L.45 9.082a1.531 1.531 0 0 1 0-2.165L6.917.45z"/>
+        </svg>
+        Kadel
+      </a>
+      </div>
+
+    <div class="tit" >Setting up Quassel Core for distributed IRC client
+    </div>
+
+    </div>
+
+  </div>
+
+  <img  style="height:300px;width:100%;z-index:1;filter:blur(2px);" src="{% static "images/quasselHead.png" %}" class="alibaba">
+
+
+
+  <div class="container-fluid" style="">
+    <div class="row">
+        <div class="col-lg-2 hid" style="border-right:1px solid #dcdcdc;position:sticky;top:0;height:100vh;padding-top:40px;">
+          <ul style="list-style-type:none;color:c70000 !important;font-family:GH Guardian Headline,Guardian Egyptian Web,Georgia,serif;font-weight:700;color:#a1845c;padding-top:5px;">
+            <li class="sid"><a class="sid" href="#">On the server</a></li>
+            <li class="sid"><a class="sid" href="#">Setting up Core</a></li>
+            <li class="sid"><a class="sid" href="#">Creating database</a></li>
+            <li class="sid"><a class="sid" href="#">On the client</a></li>
+            <li class="sid"><a class="sid" href="#">Summary</a></li>
+            <li class="sid"><a class="sid" href="#"></a></li>
+          </ul>
+        </div>
+
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 mx-auto">
+        <div class="container col-md-6" style="max-width:740px;padding-top:30px;">
+                  <h2 style="color:#8f0404;font-family:GH Guardian Headline;font-size:2.125rem;line-height:1.15;font-weight:700;" class="autot">
+            <a  href=""></a>
+            Setting up Quassel Core and Client for distributed IRC client
+          </h2>
+          <h5 style="font-family:GH Guardian Headline,Guardian Egyptian Web,Georgia,serif;font-size:1.25rem;line-height:1.15;font-weight:300;">Posted on October 16, 2020 by Cris</h5>
+          <p>Quassel is a modern, cross-platform, distributed IRC client, in that way multiple clients can attach from a central core. IRC is popular among geeks of open source softwrare.
+          </p>
+          <p>But there is problem, when you logged out from IRC channel, you miss the messages or updates that is currently happening there, but using IRC persistence, installing IRC Core that is a daemon IRC client, part of Quassel, that supports all time connectivity, in that way we can attach several IRC clients to it.</p>
+          
+          <p>To this we'll need a VPS, you can choose a 5 bucks VPS, from linode, Alibaba, Azure ...</p>
+            <div class="bd-callout bd-callout-info">
+              <h5><p>Quassel's packages</p></h5>
+                <ul>
+                    <li><code>quassel-monolithic</code> This package is an IRC client for a single computer</li>
+                    <li><code>quassel-core:</code> This package contains the core to attach multiple IRC clients at once</li>
+                    <li><code>quassel-client:</code> This package is a client that can be attached to a core IRC</li>
+                </ul>
+            </div>
+            <img style="width:100%" src="{% static "/images/quassel.png" %}">
+            <p> As we can see, the core is the application that actually communicate with IRC networks, the client just communicate with the core, in that way, you can attach several clients without give any additional information or settings, giving the user the ease of having and IRC instance on multiple devices</p>
+            <h4>On the server</h4>
+            <p>We will need to install the following packages.</p>
+            <pre style="color:white;border-radius:6px;"><code data-language="bash">
+#pacman -S quassel-core postgresql
+            </code></pre>
+            <h4>Setting up Core</h4>
+            <p>It will be necesary to generate a certificate, if you are worried about security, we will setting up Client-Core SSL encryption using openssl,and then send it to the directory of quassel.</p>
+            <pre style="color:white;border-radius:6px;"><code data-language="bash">
+#openssl req -x509 -nodes -days 365 -newkey rsa:4096 -keyout /var/lib/quassel/quasselCert.pem -out /var/lib/quassel/quasselCert.pem
+#chown quassel:quassel /var/lib/quassel/quasselCert.pem
+        </code></pre>
+              <div class="bd-callout" style="border-left-color:#32a83c;">
+              <h5><p>SSL self-signed certificate</p></h5>
+              <p>This is a self-signed certificate,so you can configure as you wish</p>
+              <ul>
+                  <li><code>-x509</code> Tells<code> req</code> to create a self-signed certificate.</li>
+                  <li><code>-nodes</code> Tells not to encrypt the private key, short for "no Des",that is to say without using a passphrase</li>
+                  <li><code>-days 365</code> Specifies that the certificate will be valid for 365 days</li>
+                  <li><code>-newkey rsa:4096</code> Generates a private key using the RSA algorithm with a 4096-bit key length</li>
+                  <li><code>-keyout <filename></code> This gives the filename to write the newly created private key to the path</li>
+                  <li><code>-out <filename></code> This specifies the output filename to write</li>
+              </ul>
+            </div>
+            <h4>Creating database</h4>
+            <p>We will need to create a database and user for quassel, if we are using PostgreSQL, so we will to switch to the <code>postgres</code> user</p>
+            <pre class="pika"><code>
+#su - postgres
+$psql
+[postgres]$ psql -c "CREATE USER quassel WITH PASSWORD 'putSomePasswordHere';"
+[postgres]$ psql -c "CREATE DATABASE quassel WITH OWNER quassel ENCODING 'UTF-8';"
+            </code></pre>
+            
+            <p>Before that,you may need to open the port 4242 in you firewall, then start  service</p>
+            <div class="bd-callout bd-callout-warning">
+                Some VPS providers has <code>security groups</code> it means, are default instances groups that your VPS belongs, and provide security and port access level, is a firewall for IaaSs, that contains ACLs (set of rules that filter traffic coming into and out of the VPS), you may need to configure this before, and change the <code>inbound rules</code> or add exceptions
+            </div>
+
+            <pre class="pika"><code>
+#systemctl start quassel.service
+#systemctl enable quassel.service
+            </pre></code>
+            <p>We could make additional configuration in the following file, for instance, if you want to change the default port, you can issue the following command</p>
+            <pre class="pika"><code>
+#quasselcore --configdir=/var/lib/quassel --port=4141
+            </code></pre>
+            <h4>On the client</h4>
+            <p>First, we need to install the client</p>
+            <pre class="pika"><code>
+#pacman -S quasselclient
+            </code></pre>
+            <p>Then we need to connect the core with the client, so we issued the command quasselclient</p>
+            <img style="width:100%" src="{% static "images/quasselConnect.png" %}">
+            <p>It will show a dialog box, where we'll add an account, and it will open another dialog box,as below</p>
+
+            <img class="imgg" style="display:block;margin-left:auto;margin-right:auto;" src="{% static "images/quasselAccount.png" %}">
+
+
+            <div class="bd-callout bd-callout-info">
+              <h5 id="overflow-auto-and-scroll">
+                How to fill it?
+              </h5>
+            <ul>
+                <li><code>Account Name:</code> Some name to identify the core.</li>
+                <li><code>Hostname:</code> The IP address of your VPS.</li>
+                <li><code>Port:</code> The port you configure before, as default is set to 4242, but it can be changed in the core</li>
+                <li><code>User:</code> The user that you create for your database in the core</li>
+                <li><code>Password:</code> The password issued for your database</li>
+            </ul>
+
+            </div>
+            <h4>Summary</h4>
+            <p>Also you can configure an android client through an app, currently I'm using QuasselDroid, I'm strongly recommend it, it also has fancy materials(themes), easy to configure and of course open source.</p> 
+            <div class="row col-lg-12" style="padding-bottom:50px;">
+            <div class="col-lg-4 col-sm-10"><img src="https://quasseldroid.info/assets/images/dracula.png" style="width:100%;"></div>
+            <div class="col-lg-4 col-sm-10 "><img src="https://quasseldroid.info/assets/images/amoled.png" style="width:100%;"></div>
+            <div class="col-lg-4 col-sm-10"><img src="https://quasseldroid.info/assets/images/gruvbox_light.png" style="width:100%;"></div></div>
+
+                </div>
+
+
+              </main>
+
+            </div>
+          </div>
+
+        </body>
+
+        </html>

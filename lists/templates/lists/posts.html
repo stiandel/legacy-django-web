@@ -1,0 +1,156 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Posts in Criss Blog</title>
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="{% static "css/callout.css" %}" rel="stylesheet">
+  <link href="{% static "css/rainbow.css" %}" rel="stylesheet" type="text/css">
+  <!-- CSS only -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <!-- JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <img src="{% static "images/snow.png" %}" style="position:fixed;">
+  <!-- Image and text -->
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container col-lg-10 col-md-11 col-sm-12">
+        <a class="navbar-brand" href="{% url "index" %}">
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-diamond" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.482 1.482 0 0 1 0-2.098L6.95.435zm1.4.7a.495.495 0 0 0-.7 0L1.134 7.65a.495.495 0 0 0 0 .7l6.516 6.516a.495.495 0 0 0 .7 0l6.516-6.516a.495.495 0 0 0 0-.7L8.35 1.134z"/>
+          <path fill-rule="evenodd" d="M8.361 1.17a.51.51 0 0 0-.722 0L4.766 4.044 8 7.278l3.234-3.234L8.361 1.17zm3.595 3.596L8.722 8l3.234 3.234 2.873-2.873c.2-.2.2-.523 0-.722l-2.873-2.873zm-.722 7.19L8 8.722l-3.234 3.234 2.873 2.873c.2.2.523.2.722 0l2.873-2.873zm-7.19-.722L7.278 8 4.044 4.766 1.17 7.639a.511.511 0 0 0 0 .722l2.874 2.873zM6.917.45a1.531 1.531 0 0 1 2.166 0l6.469 6.468a1.532 1.532 0 0 1 0 2.166l-6.47 6.469a1.532 1.532 0 0 1-2.165 0L.45 9.082a1.531 1.531 0 0 1 0-2.165L6.917.45z"/>
+        </svg>
+        Kadel
+      </a>
+
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/lists/posts">Posts</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/lists/review">Reviews</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/lists/files">Files</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/lists/linux">Linux</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/lists/wiki">Wiki</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/lists/tbr">To Be Read</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/lists/aboutMe">About Me</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="" >
+      <div data-no-lazy="1" class="row justify-content-md-center featuresection" id="featuredone" style="background-image:url({{img}});opacity:.98;width:100vw;height:238px;margin:0;">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-10 align-self-center" style="opacity:100%;filter:blur(0px) !important;">
+              <h1 style="color:#FFFFFF;margin-top:60px;" class="herotitle text-md-left">{{title}}</h1>
+            <p></p>
+            <p style="color:#FFFFFF;" class="herotext text-md-left">{{ content }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container col-lg-7 col-md-9 col-sm-12" style="background:#fff;box-shadow:5px 5px 8px rgba(0,0,0,.1); border-radius:6px;margin-top:20px;">
+    <div class="row" style="padding:20px;">
+      <div class="entry-image col-lg-4 col-md-12" style="text-align:center; display:block;">
+        <div class="image-crop-ie">
+            <img class="" style="display:block;margin-left:auto;margin-right:auto;max-height:204px;object-fit:scale-down;vertical-align:middle;max-width:100%;height:auto;" src="https://img-blog.csdnimg.cn/20190601230615904.png" height width data-ll-status="loaded">
+        </div>
+      </div>
+      <div class="col-lg-8 col-md-12">
+        <h5 class="entry-title">
+          <a href="#">Configuring Chinese Input with fcitx in Xmonad WM</a>
+        </h5>
+        <p> September 22, 2020</p>
+        <p class="land-desc">
+        Early this year I started to learn Chinese but when I try to write some 汉字, just for fun, I didn't have the right input method so I search for info, specifically for my Window Manager, that is Xmonad, I didn't find anything but there are related posts, and there's also Archlinux Wiki, so let's begin. As Archlinux Wiki says...
+        </p>
+        <div style="position:relative;float:right;"><a href="/lists/pinyin">
+                <button type="button" class="btn btn-outline-primary">See More</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="container col-lg-7 col-md-9 col-sm-12" style="background:#fff;box-shadow:5px 5px 8px rgba(0,0,0,.1); border-radius:6px;margin-top:20px;">
+    <div class="row" style="padding:20px;">
+      <div class="entry-image col-lg-4 col-md-12" style="text-align:center; display:block;">
+        <div class="image-crop-ie">
+          <img class="" style="display:block;margin-left:auto;margin-right:auto;max-height:204px;object-fit:scale-down;vertical-align:middle;max-width:100%;height:auto;" src="https://tr3.cbsistatic.com/hub/i/2016/02/18/31a40247-5a8f-431c-9a39-a10307b298af/zephyrhero.jpg" height width data-ll-status="loaded">
+        </div>
+      </div>
+      <div class="col-lg-8 col-md-12">
+        <h5 class="entry-title">
+          <a href="/lists/zephyr">Zephyr RTOS, a key technology for the future of IoT</a>
+        </h5>
+        <p>October 1,2020</p>
+        <p class="land-desc">
+        Google and Facebook have joined as Platinum Members of the Linux Foundation Open Source Project "Zephyr". This week, Facebook and Google announced, they have selected Zephyr RTOS as a technology that they will use in the next generation of products and infraestructure, in that way joining to Intel, Nordic Semiconductor...
+        </p>
+        <div style="position:relative;float:right;"><a href="/lists/zephyr">
+                <button type="button" class="btn btn-outline-primary">See More</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container col-lg-7 col-md-9 col-sm-12" style="background:#fff;box-shadow:5px 5px 8px rgba(0,0,0,.1); border-radius:6px;margin-top:20px;">
+    <div class="row" style="padding:20px;">
+      <div class="entry-image col-lg-4 col-md-12" style="text-align:center; display:block;">
+        <div class="image-crop-ie">
+            <img class="" style="display:block;margin-left:auto;margin-right:auto;max-height:204px; object-fit:scale-down;vertical-align:middle;max-width:100%;height:auto;" src="{% static "images/quassel.png" %}" height width data-ll-status="loaded">
+        </div>
+      </div>
+      <div class="col-lg-8 col-md-12">
+        <h5 class="entry-title">
+          <a href="#">Setting up Quassel Core and Client for distributed IRC client</a>
+        </h5>
+        <p> October 16,2020</p>
+        <p class="land-desc">
+        Quassel is a modern, cross-platform, distributed IRC client, in that way multiple clients can attach from a central core.IRC is popular among geeks of open source software. But there is a problem, when you logged out from IRC channel, you miss the messages or updates that is currently happening there, but using...
+        </p>
+        <div style="position:relative;float:right;"><a href="/lists/quassel">
+                <button type="button" class="btn btn-outline-primary">See More</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+</body>
+
+</html>

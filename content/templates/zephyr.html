@@ -1,0 +1,214 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Zephyr RTOS, a key technology for the future of IoT.</title>
+  <meta name="author" content="">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <!-- CSS only -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+  <!-- JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="{% static "fonts/guardian-headline/latin1-not-hinted/fonts.css" %}">
+  <link rel="stylesheet" href="{% static "fonts/guardian-textegyptian/latin1-not-hinted/fonts.css" %}">
+  <link rel="stylesheet" href="{% static "fonts/guardian-textsans/latin1-not-hinted/fonts.css" %}">
+
+  <style>
+  @media (max-width:1000px){
+    .hid{
+      visibility:hidden;
+    }
+    .tit{
+      font-size:14px;
+    }
+    .aut{
+      height:auto !important;
+    }
+    .autot{
+      font-size:25px !important;
+    }
+    .ayi{
+      font-size:1rem !important;
+    }
+    .wua{
+      font-size:0.70rem !important;
+    }
+    .alibaba{
+      height:40px !important;
+    }
+  }
+
+  </style>
+<style>
+    .hola{
+        color:#079992;
+    }
+</style>
+
+
+</head>
+
+<body>
+  <div style="background-color:#fff;width:100%;height:65px;border-bottom:3px solid #ddd;position:fixed;z-index:2;">
+    <div class="container" style="font-family:GH Guardian Headline,Guardian Egyptian Web,Georgia,serif;font-size:1.25rem;line-height:1.15;font-weight:300;display:flex;position:absolute;top:50%;-ms-transform:translateY(-50%);transform:translateY(-50%);">
+      
+      <div>
+        <a class="navbar-brand" href="{% url "index" %}" style="color:#38ada9;font-weight:600;" >
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-diamond" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.482 1.482 0 0 1 0-2.098L6.95.435zm1.4.7a.495.495 0 0 0-.7 0L1.134 7.65a.495.495 0 0 0 0 .7l6.516 6.516a.495.495 0 0 0 .7 0l6.516-6.516a.495.495 0 0 0 0-.7L8.35 1.134z"/>
+          <path fill-rule="evenodd" d="M8.361 1.17a.51.51 0 0 0-.722 0L4.766 4.044 8 7.278l3.234-3.234L8.361 1.17zm3.595 3.596L8.722 8l3.234 3.234 2.873-2.873c.2-.2.2-.523 0-.722l-2.873-2.873zm-.722 7.19L8 8.722l-3.234 3.234 2.873 2.873c.2.2.523.2.722 0l2.873-2.873zm-7.19-.722L7.278 8 4.044 4.766 1.17 7.639a.511.511 0 0 0 0 .722l2.874 2.873zM6.917.45a1.531 1.531 0 0 1 2.166 0l6.469 6.468a1.532 1.532 0 0 1 0 2.166l-6.47 6.469a1.532 1.532 0 0 1-2.165 0L.45 9.082a1.531 1.531 0 0 1 0-2.165L6.917.45z"/>
+        </svg>
+        Kadel
+      </a>
+      </div>
+
+    <div class="tit">Zephyr RTOS, a key technology for the future of IoT.
+    </div>
+
+
+    </div>
+
+  </div>
+  <img  style="height:300px !important;width:100vw;" src="https://conference2018.teqnation.com/wp-content/uploads/2016/03/1920x1000-3.jpg" class="alibaba">
+  <div class="container col-lg-8">
+    <div class="row">
+
+
+      <div class="col-lg-2" style="border-left:1px solid #dcdcdc;" class="aut">
+        <div style="border-top:1px solid #dcdcdc;height:150px;" class="aut">
+          <h5 style="font-family:GH Guardian Headline,Guardian Egyptian Web,Georgia,serif;font-weight:700;color:#38ada9;padding-top:5px;">Post</h5>
+        </div>
+        <div style="border-top:1px solid #dcdcdc;">
+          <h5 style="font-family:GH Guardian Headline,Guardian Egyptian Web,Georgia,serif;line-height:1.15;font-weight:500;color:#38ada9;font-style:italic;" class="ayi">Embedded Systems</h5>
+          <p style="font-family:GuardianTextSans,Guardian Text Sans Web,Helvetica Neue;line-height:1.5;font-weight:400;color:#767676;font-size:0.75rem;">Thu 1 Oct 2020 04:21 BST</p>
+        </div>
+        
+        <div style="border-top:1px solid #dcdcdc;fill:#38ada9;">
+          <svg width="32" height="32" viewBox="-2 -2 32 32"><path d="M17.9 14h-3v8H12v-8h-2v-2.9h2V8.7C12 6.8 13.1 5 16 5c1.2 0 2 .1 2 .1v3h-1.8c-1 0-1.2.5-1.2 1.3v1.8h3l-.1 2.8z"></path></svg>
+          <svg width="32" height="32" viewBox="-2 -2 32 32"><path d="M21.3 10.5v.5c0 4.7-3.5 10.1-9.9 10.1-2 0-3.8-.6-5.3-1.6.3 0 .6.1.8.1 1.6 0 3.1-.6 4.3-1.5-1.5 0-2.8-1-3.3-2.4.2 0 .4.1.7.1l.9-.1c-1.6-.3-2.8-1.8-2.8-3.5.5.3 1 .4 1.6.4-.9-.6-1.6-1.7-1.6-2.9 0-.6.2-1.3.5-1.8 1.7 2.1 4.3 3.6 7.2 3.7-.1-.3-.1-.5-.1-.8 0-2 1.6-3.5 3.5-3.5 1 0 1.9.4 2.5 1.1.8-.1 1.5-.4 2.2-.8-.3.8-.8 1.5-1.5 1.9.7-.1 1.4-.3 2-.5-.4.4-1 1-1.7 1.5z"></path></svg>
+          <svg width="32" height="32" viewBox="0 0 32 32"><path d="M23.363 20.875H8.637v-8.938l6.545 5.687h1.637l6.544-5.687v8.938zm-1.635-9.75L16 16l-5.728-4.875h11.456zM23.363 9.5H8.637L7 11.125v9.75L8.637 22.5h14.727L25 20.875v-9.75L23.363 9.5z"></path></svg>
+
+        </div>
+      </div>
+
+
+      <div class="col-lg-6" style="border:1px solid #dcdcdc;height:500px;">
+        <div><h2 style="font-family:GH Guardian Headline;font-size:2.125rem;line-height:1.15;font-weight:700;color:#079992;padding-top:7px;" class="autot">Zephyr RTOS, a key technology for the future of IoT.</h2>
+        </div>
+        <div><p style="font-family:GH Guardian Headline,Guardian Egyptian Web,Georgia,serif;font-size:1.25rem;line-height:1.15;font-weight:300;" class="ayi">Google and Facebook have joined as Planitum Members of the Linux Foundation Open Source Project "Zephyr"</p>
+
+          <img src="https://tr3.cbsistatic.com/hub/i/2016/02/18/31a40247-5a8f-431c-9a39-a10307b298af/zephyrhero.jpg" width=100%>
+        </div>
+
+        <div>
+            <figcaption style="font-family:GuardianTextSans,Guardian Text Sans Web;font-size:0.75rem;font-weight:400;color:#767676;" class="wua">It's an open source collaborative effort uniting developers and users in building a best-in-class small, scalable, real-time operating system (RTOS)"
+          </figcaption>
+        </div>
+        <div style="font-family:GuardianTextEgyptian, Guardian Text Egyptian Web;line-height:1.5;font-weight:400;">
+        <p><span style="font-family:GH Guardian Headline,Guardian Egyptian Web;font-size:109px;line-height:90px;font-weight:700;color:#079992;float:left;">T
+        </span>his week, Facebook and Google announced,they have selected Zephyr RTOS as a technology that they will use in the next generation of products and infraestructure, in that way joining to Intel, Nordic Semiconductor, NXP and Oticon as Platinum members,this project is aimed to deliver the best-in-class RTOS for connected resource-constrained devices, built to be secure and safe.</p>
+        <p>This project is an answer to the change that is happening fast in the connected devices space, noone  has all the answers, and as always, collaboration is key is key to reduce costs and accelerating time to market with a platform of collaboration with a neutral governance.</p>
+        <p>Currently, the project supports almost 170 hardware devices, more than any other RTOS, and of course, it's open source and it can be widely used since simple embedded environmental sensors and LED wearables to sophisticated embedded controllers, smart watches, and IoT wireless applications.</p>
+        <h3 class="hola">But What's is exactly Zephyr?</h3>
+        <p>Zephyr is a small RTOS (Real Time Operating System) that is based on a small-footprint kernel designed for use on resource-constrained and embedded devices focusing on microcontrollers, in other words, for the Internet of Things(IoT),being its main objectives, be safe, secure and flexible.</p>
+        <p>Since its initial release on Februay 2016,it's main features were: to have an small kernel, a flexible configuration and build system for compile-time definition of required resources and modules, to support a set of protocols importants on the IoT field as IPv4,IPv6,MQTT,802.15.4,BLE,etc, to have a virtual file system with several flash file systems and management, and provide a device firmware update mechanisms.</p>
+        <img src="https://www.zephyrproject.org/wp-content/uploads/sites/38/2020/09/bluetooth_le_audio_features.png" width=100%>
+        <h5>Main features</h5>
+        <ul>
+            <li>Extensive suite of kernel services</li>
+            <li>Multiple Scheduling Algorithms</li>
+            <li>Highly configurable/Modular for flexibility</li>
+            <li>Cross Architecture</li>
+            <li>Memory Protection</li>
+            <li>Compile-time resource definition</li>
+            <li>Optimized device driver model</li>
+            <li>Devicetree support</li>
+            <li>Native Networking Stack supporting multiple protocols</li>
+            <li>Bluetooth Low Energy 5.0 support</li>
+            <li>Mesh support</li>
+            <li>Native Linux, macOS, and Windows Development</li>
+            <li>Virtual File System Interface with LittleFS and FATFS Support</li>
+            <li>Powerfull multi-backend logging Framework</li>
+            <li>User friendly and full-featured Shell interface</li>
+            <li>Settings on non-volatile storage</li>
+            <li>Non-volatile storage(NVS)</li>
+            <li>Native POSIX port</li>
+        </ul>
+        <h3 class="hola">But, now, Why Real Time Operating Systems?</h3>
+        <p>This is the reason, RTOS are designed to serve real-time applications when are several processes and devices, and the processes' timing is more important than average performance. They could be either <b> event-driven</b> or <b>time-sharing</b>.</p>
+        <p>These are scheduling algorithms, in which time-sharing scheduling are determined by the interrupts received from a clock, is also known as Clock-driven, it handles which task is to be processed next is dependent at clock interrput point, and event-driven scheduling are determined by the events occurrences excluding clock interrupts, it handles which task is to be processed next is independent of clock interrupt</p>
+        <h3 class="hola">So, RTOS or just OS?</h3>
+        <p>The key difference between an OS and RTOS, is the response time to external events. OS's typically provide a non-deterministic soft real time response, where there are no guarantees as to when each task will complete, but they will try to stay responsive to the user,however, an RTOS differs in that, it typically provides a hard real time response,providing a fast, hightly deterministic ractivion to external evetns.</p>
+        <h3 class="hola">To conclude</h3>
+        <p>There are several RTOS wandering around,for instance, we have RIOT based from FireKernel,BeRTOS that has a preemptive multitasking kernel, and several ones (ChibiOS/RT, Contiki, eCos, Fuchsia Mynewt,TRON,etc) all of them are intended to be used in embedded devices in the IoT World, they only differ in the kernel type, licensing, architectures they can support,or their design philosophies.</p>
+        <p>Zephyr is only 4 years since its initial release, but has proven to be an RTOS that continually adds more features with a active community and the most important part, well documented</p>
+        <p>It's no surprise that Facebook and Google, has joined to the project, also considering the current times we are living, its necessary a to join efforts that help monitor COVID-19, with wearables,smart shoes,that help reduce the contagion rate, and considering the small footprint, integrated stacks and dependability "Zephyr" is the best option!.</p>
+
+      </div>
+      </div>
+
+      <div class="col-lg-4 hid" style="border-right:1px solid #dcdcdc;height:500px;margin-top:24px;margin-bottom:24px;">
+        <h3 style="font-family:GH Guardian Headline;font-size:1.06rem;line-height:1.15;font-weight:700;">Most Viewed</h3>
+
+        <div style="display:flex;border-top:1px solid #dcdcdc;margin-bottom:12px;">
+          <div  style="border-radius:100%;">
+            <img style="border-radius:100%;width:70px !important;height:70px !important;margin-right:10px;" src="https://i.guim.co.uk/img/media/a95003e1189f4f4727ff31fc06ebec329a8d5be4/0_0_6150_3691/master/6150.jpg?width=300&quality=85&auto=format&fit=max&s=1e4cba80852f3d3be5b571293eb13d08" width=100% height=100>
+          </div>
+          <div style="position:relative;">
+            <a style="color:rgb(18,18,18);font-family:GH Guardian Headline;font-size:1.0625rem;line-height:1.15;font-weight:500;">Shock and sorrow as Canada's biggest co-op sold to US private equity firm</a>
+          </div>
+        </div>
+
+<div style="display:flex;border-top:1px solid #dcdcdc;margin-bottom:12px;">
+          <div  style="border-radius:100%;">
+            <img style="border-radius:100%;width:70px !important;height:70px !important;margin-right:10px;" src="https://i.guim.co.uk/img/media/a95003e1189f4f4727ff31fc06ebec329a8d5be4/0_0_6150_3691/master/6150.jpg?width=300&quality=85&auto=format&fit=max&s=1e4cba80852f3d3be5b571293eb13d08" width=100% height=100>
+          </div>
+          <div style="position:relative;">
+            <a style="color:rgb(18,18,18);font-family:GH Guardian Headline;font-size:1.0625rem;line-height:1.15;font-weight:500;">Shock and sorrow as Canada's biggest co-op sold to US private equity firm</a>
+          </div>
+        </div>
+
+
+        <div style="display:flex;border-top:1px solid #dcdcdc;margin-bottom:12px;">
+          <div  style="border-radius:100%;">
+            <img style="border-radius:100%;width:70px !important;height:70px !important;margin-right:10px;" src="https://i.guim.co.uk/img/media/a95003e1189f4f4727ff31fc06ebec329a8d5be4/0_0_6150_3691/master/6150.jpg?width=300&quality=85&auto=format&fit=max&s=1e4cba80852f3d3be5b571293eb13d08" width=100% height=100>
+          </div>
+          <div style="position:relative;">
+            <a style="color:rgb(18,18,18);font-family:GH Guardian Headline;font-size:1.0625rem;line-height:1.15;font-weight:500;">Shock and sorrow as Canada's biggest co-op sold to US private equity firm</a>
+          </div>
+        </div>
+
+
+        <div style="display:flex;border-top:1px solid #dcdcdc;margin-bottom:12px;">
+          <div  style="border-radius:100%;">
+            <img style="border-radius:100%;width:70px !important;height:70px !important;margin-right:10px;" src="https://i.guim.co.uk/img/media/a95003e1189f4f4727ff31fc06ebec329a8d5be4/0_0_6150_3691/master/6150.jpg?width=300&quality=85&auto=format&fit=max&s=1e4cba80852f3d3be5b571293eb13d08" width=100% height=100>
+          </div>
+          <div style="position:relative;">
+            <a style="color:rgb(18,18,18);font-family:GH Guardian Headline;font-size:1.0625rem;line-height:1.15;font-weight:500;">Shock and sorrow as Canada's biggest co-op sold to US private equity firm</a>
+          </div>
+        </div>
+
+
+        <div style="display:flex;border-top:1px solid #dcdcdc;margin-bottom:12px;">
+          <div  style="border-radius:100%;">
+            <img style="border-radius:100%;width:70px !important;height:70px !important;margin-right:10px;" src="https://i.guim.co.uk/img/media/a95003e1189f4f4727ff31fc06ebec329a8d5be4/0_0_6150_3691/master/6150.jpg?width=300&quality=85&auto=format&fit=max&s=1e4cba80852f3d3be5b571293eb13d08" width=100% height=100>
+          </div>
+          <div style="position:relative;">
+            <a style="color:rgb(18,18,18);font-family:GH Guardian Headline;font-size:1.0625rem;line-height:1.15;font-weight:500;">Shock and sorrow as Canada's biggest co-op sold to US private equity firm</a>
+          </div>
+        </div>
+
+
+      </div>
+
+  </div>
+  </div>
+</body>
