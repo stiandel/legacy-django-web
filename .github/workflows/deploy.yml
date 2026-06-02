@@ -21,6 +21,5 @@ jobs:
             git pull origin main
             source venv/bin/activate
             pip install -r requirements.txt --quiet
-            python manage.py migrate --noinput
-            python manage.py collectstatic --noinput
-            sudo systemctl restart ${{ secrets.SERVICE_NAME }}
+            python3 manage.py migrate --noinput
+            python3 manage.py collectstatic --noinput
